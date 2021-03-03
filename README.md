@@ -3,7 +3,7 @@
 		<img src="https://raw.githubusercontent.com/WolfSoftware/branding/master/images/general/banners/64/black-and-white.png" alt="Wolf Software Logo" />
 	</a>
 	<br>
-	caretaker-core
+	CaretakerCode - The heart of the caretaker
 </h1>
 
 <p align="center">
@@ -36,9 +36,11 @@
 
 ## Overview
 
-caretaker Core is the brain that makes [Sonny](https://github.com/DevelopersToolbox/sonny) work, it processes the git log for a given repository and returns all of the required information as a single JSON object.
+Caretaker Core is the new heart of the [Caretaker](https://github.com/DevelopersToolbox/caretaker) tool. The aim is to remove all of nasty parts of Caretaker and move them into this new clean core.
 
-[Sonny](https://github.com/DevelopersToolbox/sonny) makes use of this object in order to dynamically build a CHANGELOG.md file for the given project.
+The core processes the complete git log for a given repository and returns all of the required information as a single JSON object.
+
+[Caretaker](https://github.com/DevelopersToolbox/caretaker) makes use of this object in order to dynamically build a CHANGELOG.md file for the given project.
 
 ## Installation
 
@@ -58,7 +60,7 @@ Or install it yourself as:
 
 ## Usage
 
-The following is a very [simple snippet](testing/get-raw.rb) showing how to integrate the core into your own code. The key is the single call to [caretakerCore.run](lib/caretaker-core.rb#L20).
+The following is a very [simple snippet](testing/get-raw.rb) showing how to integrate the core into your own code. The key is the single call to [CaretakerCore.run](lib/caretaker-core.rb#L20).
 
 ```ruby
 #!/usr/bin/env ruby
@@ -67,7 +69,7 @@ require 'json'
 require 'caretaker-core'
 
 begin
-    results = caretakerCore.run
+    results = CaretakerCore.run
 rescue StandardError => e
     puts e.message
     exit
@@ -78,7 +80,7 @@ puts JSON.pretty_generate(JSON.parse(results))
 
 ### Output
 
-The output from [caretakerCore.run](lib/caretaker-core.rb#L20) is a JSON formatted object. In the case of an error it will raise a `StandardError`. 
+The output from [CaretakerCore.run](lib/caretaker-core.rb#L20) is a JSON formatted object. In the case of an error it will raise a `StandardError`. 
 
 The basic structure of the JSON is as follows:
 
@@ -174,7 +176,7 @@ A more full example (Showing a single commit)
 | category | The category the commit belongs to | [Category List](lib/caretaker-core/config.rb#L13) |
 | date | The date the commit was made | YYYY-MM-DD format |
 
-> For more information about the use of categories - please refer to the sonny documentation.
+> For more information about the use of categories - please refer to the caretaker documentation.
 
 ### Limitations with regards to Pull Requests
 
