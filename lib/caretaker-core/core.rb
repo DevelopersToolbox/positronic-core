@@ -10,7 +10,7 @@ require_relative 'utils'
 
 # This is the core file
 # @author Wolf
-class PositronicCore
+class CaretakerCore
     #
     # We want to create everything as a class/static method
     #

@@ -3,18 +3,18 @@
 		<img src="https://raw.githubusercontent.com/WolfSoftware/branding/master/images/general/banners/64/black-and-white.png" alt="Wolf Software Logo" />
 	</a>
 	<br>
-	positronic-core
+	caretaker-core
 </h1>
 
 <p align="center">
-	<a href="https://travis-ci.com/DevelopersToolbox/positronic-core">
-		<img src="https://img.shields.io/travis/com/DevelopersToolbox/positronic-core/master?style=for-the-badge&logo=travis" alt="Build Status">
+	<a href="https://travis-ci.com/DevelopersToolbox/caretaker-core">
+		<img src="https://img.shields.io/travis/com/DevelopersToolbox/caretaker-core/master?style=for-the-badge&logo=travis" alt="Build Status">
 	</a>
-	<a href="https://github.com/DevelopersToolbox/positronic-core/releases/latest">
-		<img src="https://img.shields.io/github/v/release/DevelopersToolbox/positronic-core?color=blue&style=for-the-badge&logo=github&logoColor=white&label=Latest%20Release" alt="Release">
+	<a href="https://github.com/DevelopersToolbox/caretaker-core/releases/latest">
+		<img src="https://img.shields.io/github/v/release/DevelopersToolbox/caretaker-core?color=blue&style=for-the-badge&logo=github&logoColor=white&label=Latest%20Release" alt="Release">
 	</a>
-	<a href="https://github.com/DevelopersToolbox/positronic-core/releases/latest">
-		<img src="https://img.shields.io/github/commits-since/DevelopersToolbox/positronic-core/latest.svg?color=blue&style=for-the-badge&logo=github&logoColor=white" alt="Commits since release">
+	<a href="https://github.com/DevelopersToolbox/caretaker-core/releases/latest">
+		<img src="https://img.shields.io/github/commits-since/DevelopersToolbox/caretaker-core/latest.svg?color=blue&style=for-the-badge&logo=github&logoColor=white" alt="Commits since release">
 	</a>
 	<a href="LICENSE.md">
 		<img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=read-the-docs&logoColor=white" alt="Software License">
@@ -36,7 +36,7 @@
 
 ## Overview
 
-Positronic Core is the brain that makes [Sonny](https://github.com/DevelopersToolbox/sonny) work, it processes the git log for a given repository and returns all of the required information as a single JSON object.
+caretaker Core is the brain that makes [Sonny](https://github.com/DevelopersToolbox/sonny) work, it processes the git log for a given repository and returns all of the required information as a single JSON object.
 
 [Sonny](https://github.com/DevelopersToolbox/sonny) makes use of this object in order to dynamically build a CHANGELOG.md file for the given project.
 
@@ -45,7 +45,7 @@ Positronic Core is the brain that makes [Sonny](https://github.com/DevelopersToo
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'positronic-core'
+gem 'caretaker-core'
 ```
 
 And then execute:
@@ -54,20 +54,20 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install positronic-core
+    $ gem install caretaker-core
 
 ## Usage
 
-The following is a very [simple snippet](testing/get-raw.rb) showing how to integrate the core into your own code. The key is the single call to [PositronicCore.run](lib/positronic-core.rb#L20).
+The following is a very [simple snippet](testing/get-raw.rb) showing how to integrate the core into your own code. The key is the single call to [caretakerCore.run](lib/caretaker-core.rb#L20).
 
 ```ruby
 #!/usr/bin/env ruby
 
 require 'json'
-require 'positronic-core'
+require 'caretaker-core'
 
 begin
-    results = PositronicCore.run
+    results = caretakerCore.run
 rescue StandardError => e
     puts e.message
     exit
@@ -78,7 +78,7 @@ puts JSON.pretty_generate(JSON.parse(results))
 
 ### Output
 
-The output from [PositronicCore.run](lib/positronic-core.rb#L20) is a JSON formatted object. In the case of an error it will raise a `StandardError`. 
+The output from [caretakerCore.run](lib/caretaker-core.rb#L20) is a JSON formatted object. In the case of an error it will raise a `StandardError`. 
 
 The basic structure of the JSON is as follows:
 
@@ -100,8 +100,8 @@ The basic structure of the JSON is as follows:
     * chronological - All commits in chronological order.
     * categorised - All commits split by category.
 * repo - A hash with information relating to the repository
-    * url - The full base url to the repo (e.g. https://github.com/DevelopersToolbox/positronic-core)
-    * slug - The github organisation / repository name (e.g. DevelopersToolbox/positronic-core)
+    * url - The full base url to the repo (e.g. https://github.com/DevelopersToolbox/caretaker-core)
+    * slug - The github organisation / repository name (e.g. DevelopersToolbox/caretaker-core)
 
 A more full example (Showing a single commit)
 
@@ -156,8 +156,8 @@ A more full example (Showing a single commit)
         }
     },
     "repo": {
-        "url": "https://github.com/DevelopersToolbox/positronic-core",
-        "slug": "DevelopersToolbox/positronic-core"
+        "url": "https://github.com/DevelopersToolbox/caretaker-core",
+        "slug": "DevelopersToolbox/caretaker-core"
     }
 }
 ```
@@ -171,7 +171,7 @@ A more full example (Showing a single commit)
 | commit_message | The commit message message. | Anything alphanumberic |
 | child_commit_messages | The commit messages of any commits that form part of a pull/merge request | Anything alphanumberic or false |
 | commit_type | The type of commit | pr or commit |
-| category | The category the commit belongs to | [Category List](lib/positronic-core/config.rb#L13) |
+| category | The category the commit belongs to | [Category List](lib/caretaker-core/config.rb#L13) |
 | date | The date the commit was made | YYYY-MM-DD format |
 
 > For more information about the use of categories - please refer to the sonny documentation.

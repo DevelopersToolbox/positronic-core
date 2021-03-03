@@ -5,10 +5,10 @@ require 'json'
 $LOAD_PATH.unshift('./lib')
 
 require 'bundler/setup'
-require 'positronic-core'
+require 'caretaker-core'
 
 begin
-    results = PositronicCore.run
+    results = CaretakerCore.run
 rescue StandardError => e
     puts e.message
     exit

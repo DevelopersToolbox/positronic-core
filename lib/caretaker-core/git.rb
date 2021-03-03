@@ -1,7 +1,7 @@
 #
 # Description should go here
 #
-class PositronicCore
+class CaretakerCore
     #
     # We want to create everything as a class/static method
     #

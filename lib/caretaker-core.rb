@@ -3,13 +3,13 @@ require 'json'
 #
 # We will need to change this when we restrcuture the code
 #
-require 'positronic-core/core'
-require 'positronic-core/version'
+require 'caretaker-core/core'
+require 'caretaker-core/version'
 
 #
 # Docs to go here
 #
-class PositronicCore
+class CaretakerCore
     #
     # Docs to go here
     #
