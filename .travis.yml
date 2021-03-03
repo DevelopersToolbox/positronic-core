@@ -1,0 +1,129 @@
+matrix:
+  include:
+  - language: ruby
+    name: Bundler (rvm 2.5)
+    rvm: 2.5
+    before_install:
+    - gem install bundler
+  - language: ruby
+    name: Bundler (rvm 2.6)
+    rvm: 2.6
+    before_install:
+    - gem install bundler
+  - language: ruby
+    name: Bundler (rvm 2.7)
+    rvm: 2.7
+    before_install:
+    - gem install bundler
+  - language: ruby
+    name: Bundler (rvm 3.0)
+    rvm: 3.0
+    before_install:
+    - gem install bundler
+  - language: ruby
+    name: Rubocop (rvm 2.5)
+    rvm: 2.5
+    before_install:
+    - git clone https://github.com/TravisToolbox/rubocop.git
+    install:
+    - "./rubocop/install.sh"
+    script:
+    - "./rubocop/scan.sh"
+  - language: ruby
+    name: Rubocop (rvm 2.6)
+    rvm: 2.6
+    before_install:
+    - git clone https://github.com/TravisToolbox/rubocop.git
+    install:
+    - "./rubocop/install.sh"
+    script:
+    - "./rubocop/scan.sh"
+  - language: ruby
+    name: Rubocop (rvm 2.7)
+    rvm: 2.7
+    before_install:
+    - git clone https://github.com/TravisToolbox/rubocop.git
+    install:
+    - "./rubocop/install.sh"
+    script:
+    - "./rubocop/scan.sh"
+  - language: ruby
+    name: Rubocop (rvm 3.0)
+    rvm: 3.0
+    before_install:
+    - git clone https://github.com/TravisToolbox/rubocop.git
+    install:
+    - "./rubocop/install.sh"
+    script:
+    - "./rubocop/scan.sh"
+  - language: ruby
+    name: Reek (rvm 2.5)
+    rvm: 2.5
+    before_install:
+    - git clone https://github.com/TravisToolbox/reek.git
+    install:
+    - "./reek/install.sh"
+    script:
+    - "./reek/scan.sh"
+  - language: ruby
+    name: Reek (rvm 2.6)
+    rvm: 2.6
+    before_install:
+    - git clone https://github.com/TravisToolbox/reek.git
+    install:
+    - "./reek/install.sh"
+    script:
+    - "./reek/scan.sh"
+  - language: ruby
+    name: Reek (rvm 2.7)
+    rvm: 2.7
+    before_install:
+    - git clone https://github.com/TravisToolbox/reek.git
+    install:
+    - "./reek/install.sh"
+    script:
+    - "./reek/scan.sh"
+  - language: ruby
+    name: Reek (rvm 3.0)
+    rvm: 3.0
+    before_install:
+    - git clone https://github.com/TravisToolbox/reek.git
+    install:
+    - "./reek/install.sh"
+    script:
+    - "./reek/scan.sh"
+  - language: ruby
+    name: YAML Linting (rvm 2.7)
+    rvm: 2.7
+    before_install:
+    - git clone https://github.com/TravisToolbox/yaml-lint
+    install:
+    - "./yaml-lint/install.sh"
+    script:
+    - "./yaml-lint/scan.sh"
+  - language: bash
+    name: Shellcheck (Bash)
+    os: linux
+    arch: arm64-graviton2
+    before_install:
+    - git clone https://github.com/TravisToolbox/shellcheck
+    install:
+    - "./shellcheck/install.sh"
+    script:
+    - "./shellcheck/scan.sh"
+  - language: ruby
+    name: Link Checking (rvm 2.7)
+    rvm: 2.7
+    env:
+    - WHITELIST="https://img.shields.io,https://github.com/DevelopersToolbox/sonny"
+    - EXCLUDE_FILES="CHANGELOG.md"
+    before_install:
+    - git clone https://github.com/TravisToolbox/awesomebot
+    install:
+    - "./awesomebot/install.sh"
+    script:
+    - "./awesomebot/scan.sh"
+notifications:
+  email: false
+  slack:
+    secure: G60Aax/kzMqAVBY35tZmhGRFbnHjuk5Zrzl77+2A3EwgXQtn/1v/+QLHR1wJ4FuScPXNxla680+vGljld7xLMwIzTcVUPF5qhM/NFpkjDbY+H9Wm5OxOntXcXsineYPVWC0qWBtlp1p4JtpSyT1Tej3+/BUsTSMCto0OD9ubZupBgFYgQna3052hmdyqkJTxJk51I7B0S41tqscXjW9RxCQSbpsP3VVUsiFgHfhwT0czGrAOA0Bf3ksqdtnLwbF+/rEoWTsuHgn3ZXZ4fyD3CZWEEpz9Ljlag4iS9XCMDHw/AVU966+JHELjPYd8q08tTD3svwi0Q3p/xMr4vNb5cFzE5VrWQTmFdNAovSPm4u9f8LiqxJMXriN7ffCu4PHgLV/BV/MkuQKOsyzE+6bWDCkkq3tbEvBPAgPxBKerG5mlg0SqqkJIrqlfJYoqptesn8RrqA9ddHPDS4arWCU9pCar/RTIotca4s9WBU0M9rDcXWIsw1uOzMuEVWmkuzLbHm9K90zqd/GcRs7vubx4hQVZatKOPEUA+FGNDUPxJLilU0N1oi2L++yhlJInKNQht6DDBZ8iYVO3t1LIuJ+f4ppK+exGYJLr0mQWEJRqY6cMI5Z3CGxqSrfAIrDiK+1gdkVIYv0/J0KMHf4RhS1MT5HBeny+4HuagiZ9XV6z0U0=
