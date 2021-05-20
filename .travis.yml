@@ -93,8 +93,8 @@ matrix:
     script:
     - "./reek/scan.sh"
   - language: ruby
-    name: YAML Linting (rvm 2.7)
-    rvm: 2.7
+    name: YAML Linting (rvm 3.0)
+    rvm: 3.0
     before_install:
     - git clone https://github.com/TravisToolbox/yaml-lint
     install:
@@ -112,8 +112,8 @@ matrix:
     script:
     - "./shellcheck/scan.sh"
   - language: ruby
-    name: Link Checking (rvm 2.7)
-    rvm: 2.7
+    name: Link Checking (rvm 3.0)
+    rvm: 3.0
     env:
     - WHITELIST="https://img.shields.io,https://github.com/DevelopersToolbox/caretaker"
     - EXCLUDE_FILES="CHANGELOG.md"
@@ -126,4 +126,4 @@ matrix:
 notifications:
   email: false
   slack:
-    secure: G60Aax/kzMqAVBY35tZmhGRFbnHjuk5Zrzl77+2A3EwgXQtn/1v/+QLHR1wJ4FuScPXNxla680+vGljld7xLMwIzTcVUPF5qhM/NFpkjDbY+H9Wm5OxOntXcXsineYPVWC0qWBtlp1p4JtpSyT1Tej3+/BUsTSMCto0OD9ubZupBgFYgQna3052hmdyqkJTxJk51I7B0S41tqscXjW9RxCQSbpsP3VVUsiFgHfhwT0czGrAOA0Bf3ksqdtnLwbF+/rEoWTsuHgn3ZXZ4fyD3CZWEEpz9Ljlag4iS9XCMDHw/AVU966+JHELjPYd8q08tTD3svwi0Q3p/xMr4vNb5cFzE5VrWQTmFdNAovSPm4u9f8LiqxJMXriN7ffCu4PHgLV/BV/MkuQKOsyzE+6bWDCkkq3tbEvBPAgPxBKerG5mlg0SqqkJIrqlfJYoqptesn8RrqA9ddHPDS4arWCU9pCar/RTIotca4s9WBU0M9rDcXWIsw1uOzMuEVWmkuzLbHm9K90zqd/GcRs7vubx4hQVZatKOPEUA+FGNDUPxJLilU0N1oi2L++yhlJInKNQht6DDBZ8iYVO3t1LIuJ+f4ppK+exGYJLr0mQWEJRqY6cMI5Z3CGxqSrfAIrDiK+1gdkVIYv0/J0KMHf4RhS1MT5HBeny+4HuagiZ9XV6z0U0=
+    secure: lf180dIS6rX+M1V9YT3KHvSSwE/BeW3s2XLRiyx8L4ruwPOpXv9YkdjpGVapdA+dJpXnFMbYUiNyXxbjggvguEycSuXat57EVHQzuXn2dkgDAH0sKIRoCXuTxQfbYUKbI/3jGXafQC7YH3Lhw2Laza/R4b7281zj8QFtGnQNaeqetDJIBczsXtiUjjWkwywUh9UNu+W5j5vGY67v4DpupFNJj3zbmsQlnD4C4py8OlAsza1sfXbtd4Di+x4+MDg4nZCY7UKTY1JZGMiTuO8y4RByRheMsZKJjgv1VqA/q75vNSiXC9c1MkSJHpjHtiPLdUg8JLtl0kRgfZriuueXO/PtA0BxCglZfjLxn9FsSj+UN9Xd5pJYGbT+mzrguSINk7Y2mqkfssTjJwgO41Pp8F0IaAoKK7BYJ4DL6Cfq2pyYew7h4tbyZuipYrK2r9b5qhwlWnPgBuyQry700U1a888fy94MU9EzTutjhHpxRgdqnMXGM10C2DpaDo5J36ApwLOJRGNk8VYREbszqZ55PuZet7hv1tbLBhhfDaKxVOy89Nk5Oluubk2rLtave7YxMU+AUdEiHIVqY66caHw1hqXqCBPGI0V7hWLykctZX+KAf0CSPJMRY6U2B53ST4pb3mvUy5zZj7au+t8TKBPdEXa4iVd2VH7fDDVuftvud1M=
